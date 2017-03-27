@@ -14,7 +14,7 @@ WORK_DIRECTORY="fooocker"
 DEST_PACKAGES_NAME="downloaded-packages"
 
 function help {
-	echo
+	echo	
 	echo -e "Usage: ./fooocker.sh [-n number] [-s size]"
 	echo -e "\t-n [number] - is the number of packages to analyze"
 	echo -e "\t-s [size] - is the max size of the package to analyze in bytes"
