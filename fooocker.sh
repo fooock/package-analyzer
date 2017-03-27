@@ -105,6 +105,9 @@ function filter_package_by_size {
 	size=$(apt-cache show $name | grep ^Size | cut -d':' -f2 | tr -d '[:space:]')
 	if [[ $size -lt $PREFERRED_PKG_SIZE ]]; then
 		let passed_filter++
+	else
+		grep -v $name $PACKAGES_FILE_NAME > $PACKAGES_FILE_NAME.tmp 
+		mv $PACKAGES_FILE_NAME.tmp $PACKAGES_FILE_NAME
 	fi
 	let filtered_packages++
 	printf "[-] Filtered($passed_filter) - Analyzed $filtered_packages of $total_packages packages\r"
