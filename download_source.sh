@@ -11,7 +11,7 @@ function download_source {
   cd $package_name
 
   ## Download the package
-  apt-get source $package_name
+  apt-get source $package_name > /dev/null 2>&1
 
   ## Return to the previous directory
   cd ..
