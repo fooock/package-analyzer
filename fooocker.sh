@@ -92,7 +92,6 @@ apt list 2> /dev/null | cut -d/ -f1 > $PACKAGES_FILE_NAME
 ## it contains the string 'Listing...'
 tail -n +2 $PACKAGES_FILE_NAME > $PACKAGES_FILE_NAME.tmp && mv $PACKAGES_FILE_NAME.tmp $PACKAGES_FILE_NAME
 
-
 ## Create the file to store the total number of packages to analyze
 wc -l $PACKAGES_FILE_NAME > $TOTAL_PACKAGES_FILE_NAME
 total_packages=$(cut -d' ' -f1 $TOTAL_PACKAGES_FILE_NAME)
