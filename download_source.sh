@@ -13,6 +13,10 @@ function download_source {
   ## Download the package
   apt-get source $package_name > /dev/null 2>&1
 
+	## get the name of the extracted package. It should be the unique directory
+	extracted_dir=$(ls -l | grep ^d | cut -d' ' -f13)
+	../../../analyze.sh $(pwd)/$extracted_dir
+	
   ## Return to the previous directory
   cd ..
 }

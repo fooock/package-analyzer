@@ -106,6 +106,7 @@ function filter_package_by_size {
 	if [[ $size -lt $PREFERRED_PKG_SIZE ]]; then
 		let passed_filter++
 	else
+		## Remove the line of the package that not comply with the filter
 		grep -v $name $PACKAGES_FILE_NAME > $PACKAGES_FILE_NAME.tmp 
 		mv $PACKAGES_FILE_NAME.tmp $PACKAGES_FILE_NAME
 	fi
