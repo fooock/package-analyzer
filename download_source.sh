@@ -15,7 +15,7 @@ function download_source {
 
 	## get the name of the extracted package. It should be the unique directory
 	extracted_dir=$(ls -l | grep ^d | cut -d' ' -f13)
-	../../../analyze.sh $(pwd)/$extracted_dir
+	../../../analyze.sh $(pwd)/$extracted_dir ../../../reg_exp.txt
 	
   ## Return to the previous directory
   cd ..

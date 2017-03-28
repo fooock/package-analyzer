@@ -69,7 +69,7 @@ echo "-------------------------------------"
 echo "[+] Preparing environment"
 
 ## Check if the WORK_DIRECTORY exists. If exists then we delete all content
-## to create a fresh direcotry where the new data will be stored
+## to create a fresh directory where the new data will be stored
 if [ -d $WORK_DIRECTORY ]; then
 	rm -rf $WORK_DIRECTORY
 fi
