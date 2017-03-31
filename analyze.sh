@@ -20,7 +20,7 @@ do
 		## Check if the line contain any reg exp from the reg_exp text file
 		while read -r regexp; do
 			if [[ $line =~ $regexp ]]; then
-				let analyzed_files++
+				let interesting_files++
 			fi
 		done < $reg_exp_file
 
