@@ -9,7 +9,7 @@ files_found=0
 matched_lines=0
 analyzed_lines=0
 ## Iterate over all interesting files
-for file in $(find $dir_to_analyze -name '*c' -or -name '*.cpp' -or -name '*.h')
+for file in $(find $dir_to_analyze -name '*c' -or -name '*.cpp' -or -name '*.h' -or -name '*.tpp' -or -name '*.hpp')
 do
 	## Discard directories
 	if [[ -d $file ]]; then
