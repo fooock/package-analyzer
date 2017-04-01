@@ -32,7 +32,7 @@ files_found=0
 matched_lines=0
 analyzed_lines=0
 ## Iterate over all interesting files
-for file in $(find $dir_to_analyze -name '*c' -or -name '*.cpp' -or -name '*.h' -or -name '*.tpp' -or -name '*.hpp')
+for file in $(find $dir_to_analyze -name '*.c' -or -name '*.cpp' -or -name '*.h' -or -name '*.tpp' -or -name '*.hpp')
 do
 	## Discard directories
 	if [[ -d $file ]]; then
@@ -53,18 +53,17 @@ do
 
 		let analyzed_lines++
 	done < $file
-
+  let files_found++
 	## Show results
-	printf "  [+] Files found: $files_found - Lines analyzed: $analyzed_lines - Matched lines: $matched_lines\r"
-	let files_found++
+	echo -ne "  [+] Files found: $files_found - Lines analyzed: $analyzed_lines - Matched lines: $matched_lines\r"
 done
-
-echo
 
 ## When all files of the package are analyzed, if we have more than 0 matched files,
 ## send the result to make an advanced analysis
 if [[ $matched_lines -gt 0 ]]; then
+  echo
 	echo "  [+] Sending results to make an advanced analysis..."
 else
+  echo
   echo "  [+] No matches found!"
 fi
