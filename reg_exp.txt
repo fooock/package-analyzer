@@ -1,2 +1,11 @@
 srtcpy
 getenv
+gets
+strcat
+scanf
+sprintf
+tmpfile
+mktemp
+gethostbyaddr
+gethostbyname
+bzero
